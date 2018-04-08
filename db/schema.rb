@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407221433) do
+ActiveRecord::Schema.define(version: 20180408022503) do
 
   create_table "form_fields", force: :cascade do |t|
     t.integer "min"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180407221433) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "forms_id"
+    t.index ["forms_id"], name: "index_submissions_on_forms_id"
   end
 
 end
